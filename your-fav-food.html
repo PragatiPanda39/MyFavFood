@@ -9,211 +9,217 @@
 
 
   <style>
+    .BtnFoodMenu {
+      all: unset;
+      width: 100px;
+      height: 30px;
+      font-size: 16px;
+      background: transparent;
+      border: none;
+      position: relative;
+      color: #f0f0f0;
+      cursor: pointer;
+      z-index: 1;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      margin-top: 10px;
 
-.BtnFoodMenu {
-  all: unset;
-  width: 100px;
-  height: 30px;
-  font-size: 16px;
-  background: transparent;
-  border: none;
-  position: relative;
-  color: #f0f0f0;
-  cursor: pointer;
-  z-index: 1;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 10px;
+    }
 
-}
+    .BtnFoodMenu::after,
+    .BtnFoodMenu::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -99999;
+      transition: all .4s;
+    }
 
-.BtnFoodMenu::after,
-.BtnFoodMenu::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all .4s;
-}
+    .BtnFoodMenu::before {
+      transform: translate(0%, 0%);
+      width: 100%;
+      height: 100%;
+      background: #28282d;
+      border-radius: 10px;
+    }
 
-.BtnFoodMenu::before {
-  transform: translate(0%, 0%);
-  width: 100%;
-  height: 100%;
-  background: #28282d;
-  border-radius: 10px;
-}
+    .BtnFoodMenu::after {
+      transform: translate(10px, 10px);
+      width: 35px;
+      height: 35px;
+      background: #ffffff15;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 50px;
+    }
 
-.BtnFoodMenu::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
-  background: #ffffff15;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 50px;
-}
+    .BtnFoodMenu:hover::before {
+      transform: translate(5%, 20%);
+      width: 110%;
+      height: 110%;
+    }
 
-.BtnFoodMenu:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
-}
+    .BtnFoodMenu:hover::after {
+      border-radius: 10px;
+      transform: translate(0, 0);
+      width: 100%;
+      height: 100%;
+    }
 
-.BtnFoodMenu:hover::after {
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-.BtnFoodMenu:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
-}
-
+    .BtnFoodMenu:active::after {
+      transition: 0s;
+      transform: translate(0, 5%);
+    }
 
 
-.logo {
-  float: left;
-}
-/* ~~ Top Navigation Bar ~~ */
 
-#navigation-container {
-  width: 1200px;
-  margin: 0 auto;
-  height: 70px;
-}
-ul {
-    list-style-type: none;
-}
-.navigation-bar {
-  background-color: #352d2f;
-  height: 70px;
-  width: 100%;
-  text-align:center;
-}
-.navigation-bar img{
-float:left;
-width: 5%;
-height: 70%;
-padding-top: 10px;
-}
-.navigation-bar ul {
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  display:inline-block;
-  vertical-align:top;
-}
+    .logo {
+      float: left;
+    }
 
-.navigation-bar li {
-  list-style-type: none;
-  padding: 0px;
-  height: 24px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  display: inline;
-}
+    /* ~~ Top Navigation Bar ~~ */
 
-.navigation-bar li a {
-  color:white;
-  font-size: 16px;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  line-height: 70px;
-  padding: 5px 15px;
-  opacity: 0.7;
-}
+    #navigation-container {
+      width: 1200px;
+      margin: 0 auto;
+      height: 70px;
+    }
 
-.btn{
-background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.search
-{
-  
-  margin: 25px;
-  margin-left: 400px;
-}
+    ul {
+      list-style-type: none;
+    }
 
+    .navigation-bar {
+      background-color: #352d2f;
+      height: 70px;
+      width: 100%;
+      text-align: center;
+    }
 
-.companyimg{
-  width: 50%;
-  margin:20px
-}
-#menu {
-  float: right;
-}  
+    .navigation-bar img {
+      float: left;
+      width: 5%;
+      height: 70%;
+      padding-top: 10px;
+    }
 
-body {
-  font-family: Arial;
-  color: white;
-}
+    .navigation-bar ul {
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+    }
 
-.split {
-  height: 90%;
-  width: 30%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;  
-  margin-top: 5%;
-  margin-left: 7px;
-  
-}
-.food_name{
-  color: black;
-}
+    .navigation-bar li {
+      list-style-type: none;
+      padding: 0px;
+      height: 24px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      display: inline;
+    }
 
-.food_description{
-  color: green;
-}
+    .navigation-bar li a {
+      color: white;
+      font-size: 16px;
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      line-height: 70px;
+      padding: 5px 15px;
+      opacity: 0.7;
+    }
 
-.headertxt{
-  margin: 20px;
-}
+    .btn {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
 
-.left {
-  left: 0;
-  background-color: darkolivegreen;
+    .search {
 
-}
-
-.right {
-  right: 0;
-  width:70%;
-  background-color: gold;
-}
+      margin: 25px;
+      margin-left: 400px;
+    }
 
 
-.centered {
-  margin:30px
-}
+    .companyimg {
+      width: 50%;
+      margin: 20px
+    }
 
-img{
-  width: 300px;
-  height: 200px;
+    #menu {
+      float: right;
+    }
 
-}
+    body {
+      font-family: Arial;
+      color: white;
+    }
 
+    .split {
+      height: 90%;
+      width: 30%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+      margin-top: 5%;
+      margin-left: 7px;
+
+    }
+
+    .food_name {
+      color: black;
+    }
+
+    .food_description {
+      color: green;
+    }
+
+    .headertxt {
+      margin: 20px;
+    }
+
+    .left {
+      left: 0;
+      background-color: darkolivegreen;
+
+    }
+
+    .right {
+      right: 0;
+      width: 70%;
+      background-color: gold;
+    }
+
+
+    .centered {
+      margin: 30px
+    }
+
+    img {
+      width: 300px;
+      height: 200px;
+
+    }
   </style>
 
 
@@ -240,9 +246,9 @@ img{
 
 
       <div id="navigation-container">
-  
-        <img class="imglogo" src="Sitelogo2.png" >
-  
+
+        <img class="imglogo" src="Sitelogo2.png">
+
         <ul>
           <li><a href="#">sign up</a></li>
           <li><a href="#">login</a></li>
@@ -250,141 +256,167 @@ img{
           <li><a href="#">Services</a></li>
           <li><a href="#">Get in Touch</a></li>
         </ul>
-        
+
         <input class="search" type="text" placeholder="Search..">
         <button class="btn">search</button>
-      
+
       </div>
   </header>
   <div class="split left">
     <div class="centered-left">
-      <h1 class="headertxt" >Top 5 Favorite Foods</h1>
-			<ul>
-				<li><a class="BtnFoodMenu" href="#TandooriChicken">Tandoori chicken</a></li>
-				<li><a class="BtnFoodMenu" href="#Chickenbiriyani">Chicken biriyani</a></li>
-				<li><a class="BtnFoodMenu" href="#Breakfast">Breakfast</a></li>
-				<li><a class="BtnFoodMenu" href="#pasta">Pasta</a></li>
+      <h1 class="headertxt">Top 5 Favorite Foods</h1>
+      <ul>
+        <li><a class="BtnFoodMenu" href="#TandooriChicken">Tandoori chicken</a></li>
+        <li><a class="BtnFoodMenu" href="#Chickenbiriyani">Chicken biriyani</a></li>
+        <li><a class="BtnFoodMenu" href="#Breakfast">Breakfast</a></li>
+        <li><a class="BtnFoodMenu" href="#pasta">Pasta</a></li>
         <li><a class="BtnFoodMenu" href="#Dessert">Dessert</a></li>
         <li><a class="BtnFoodMenu" href="#juice">juice</a></li>
-			</ul>
-      <img class="companyimg" src="Sitelogo2.png" >
+      </ul>
+      <img class="companyimg" src="Sitelogo2.png">
     </div>
   </div>
-  
+
   <div class="split right">
     <div class="centered">
       <!-- tandoori chicken-->
-			<div id="TandooriChicken" class="food_container">
-				<table cellspacing="20px" width="100%" align="center">
-					<tr>
-						<td class="food_photo" rowspan="2">
-							<img src="chicken-tandoor.jpg" width="300px" alt="tandoori chicken">
-						</td>
-						<td class="food_name"><h3>Tandoori Chicken</h3></td>
-					</tr>
-					<tr>
-						<td class="food_description">Tandoori chicken is a South Asian dish of chicken marinated in yogurt and spices and roasted in a tandoor, 
-              a cylindrical clay oven.tandoori chicken, a dish of roasted chicken marinated in yogurt and generously spiced,giving the meat its trademark red colour.
-               It is named for the cylindrical clay oven in which it is cooked, a tandoor.
-              
-              </td>
-					</tr>
-				</table>
-			</div>
+      <div id="TandooriChicken" class="food_container">
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_photo" rowspan="2">
+              <img src="chicken-tandoor.jpg" width="300px" alt="tandoori chicken">
+            </td>
+            <td class="food_name">
+              <h3>Tandoori Chicken</h3>
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">Tandoori chicken is a South Asian dish of chicken marinated in yogurt and
+              spices and roasted in a tandoor,
+              a cylindrical clay oven.tandoori chicken, a dish of roasted chicken marinated in yogurt and generously
+              spiced,giving the meat its trademark red colour.
+              It is named for the cylindrical clay oven in which it is cooked, a tandoor.
 
-			<!--chicken biriyani-->
-			<div id="Chickenbiriyani" class="food_container">
-				<table cellspacing="20px" width="100%" align="center">
-					<tr>
-						<td class="food_name"><h3>Chicken biriyani</h3></td>
-						<td class="food_photo" rowspan="2">
-							<img src="chicken-biriyani.jpg" width="300px" alt="chicken biriyani">
-						</td>
-					</tr>
-					<tr>
-						<td class="food_description">Hyderabadi biryani, also known as Hyderabadi dum biryani,
-              is a style of biryani from Hyderabad, India made with basmati rice and meat (mostly chicken). 
-             Originating in the kitchens of the Nizam of Hyderabad, it combines elements of Hyderabadi and 
-             Mughlai cuisines.Hyderabadi biryani is spicy and has the distinct flavour of saffron. 
-            The Andhra influence on Mughlai food shows itself in the spicy and hot taste of Hyderabadi biryani,
-            which is of two main types: kachchi and pakki.
-             
-             </td>
-					</tr>
-				</table>
-			</div>
+            </td>
+          </tr>
+        </table>
+      </div>
 
-			<!-- Breakfast-->
-			<div id="Breakfast" class="food_container">
-				<table cellspacing="20px" width="100%" align="center">
-					<tr>
-						<td class="food_photo" rowspan="2">
-							<img src="breakfast1.jpeg" width="300px" alt="breskfast">
-						</td>
-						<td class="food_name"><h3>Breakfast</h3></td>
-					</tr>
-					<tr>
-						<td class="food_description">the first meal of the day especially when taken in the morning. the food prepared for a breakfast eat your breakfast.
+      <!--chicken biriyani-->
+      <div id="Chickenbiriyani" class="food_container">
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_name">
+              <h3>Chicken biriyani</h3>
+            </td>
+            <td class="food_photo" rowspan="2">
+              <img src="chicken-biriyani.jpg" width="300px" alt="chicken biriyani">
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">Hyderabadi biryani, also known as Hyderabadi dum biryani,
+              is a style of biryani from Hyderabad, India made with basmati rice and meat (mostly chicken).
+              Originating in the kitchens of the Nizam of Hyderabad, it combines elements of Hyderabadi and
+              Mughlai cuisines.Hyderabadi biryani is spicy and has the distinct flavour of saffron.
+              The Andhra influence on Mughlai food shows itself in the spicy and hot taste of Hyderabadi biryani,
+              which is of two main types: kachchi and pakki.
+
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Breakfast-->
+      <div id="Breakfast" class="food_container">
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_photo" rowspan="2">
+              <img src="breakfast1.jpeg" width="300px" alt="breskfast">
+            </td>
+            <td class="food_name">
+              <h3>Breakfast</h3>
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">the first meal of the day especially when taken in the morning. the food
+              prepared for a breakfast eat your breakfast.
               Eggs and bacon that you eat first thing in the morning for your first meal.
-              </td>
-					</tr>
-				</table>
-			</div>
+            </td>
+          </tr>
+        </table>
+      </div>
 
-			<!-- Pasta -->
+      <!-- Pasta -->
 
       <div id="Pasta" class="food_container">
-				<table cellspacing="20px" width="100%" align="center">
-					<tr>
-						<td class="food_name"><h3>Pasta</h3></td>
-						<td class="food_photo" rowspan="2">
-							<img src="pasta.jpg" width="300px" alt="Pasta">
-						</td>
-					</tr>
-					<tr>
-						<td class="food_description">Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. Rice flour, or legumes such as beans or lentils, are sometimes used in place of wheat flour to yield a different taste and texture, or as a gluten-free alternative. Pasta is a staple food of Italian cuisine. Both dried and fresh pastas come in a number of shapes and varieties, with 310 specific forms known by over 1,300 documented names.
-             
-             </td>
-					</tr>
-				</table>
-			</div>
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_name">
+              <h3>Pasta</h3>
+            </td>
+            <td class="food_photo" rowspan="2">
+              <img src="pasta.jpg" width="300px" alt="Pasta">
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">Pasta is a type of food typically made from an unleavened dough of wheat flour
+              mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. Rice
+              flour, or legumes such as beans or lentils, are sometimes used in place of wheat flour to yield a
+              different taste and texture, or as a gluten-free alternative. Pasta is a staple food of Italian cuisine.
+              Both dried and fresh pastas come in a number of shapes and varieties, with 310 specific forms known by
+              over 1,300 documented names.
 
-<!-- juice-->
-<div id="juice" class="food_container">
-  <table cellspacing="20px" width="100%" align="center">
-    <tr>
-      <td class="food_photo" rowspan="2">
-        <img src="juice.jpg" width="300px" alt="juice">
-      </td>
-      <td class="food_name"><h3>Juice</h3></td>
-    </tr>
-    <tr>
-      <td class="food_description">Fruit juice is 100% pure juice made from the flesh of fresh fruit or from whole fruit, 
-        depending on the type used. It is not permitted to add sugars, sweeteners, preservatives,flavourings or colourings to fruit juice.Smoothies usually contain crushed fruit, purees and fruit juice to produce a premium fruit juice product.</td>
-    </tr>
-  </table>
-</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- juice-->
+      <div id="juice" class="food_container">
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_photo" rowspan="2">
+              <img src="juice.jpg" width="300px" alt="juice">
+            </td>
+            <td class="food_name">
+              <h3>Juice</h3>
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">Fruit juice is 100% pure juice made from the flesh of fresh fruit or from whole
+              fruit,
+              depending on the type used. It is not permitted to add sugars, sweeteners, preservatives,flavourings or
+              colourings to fruit juice.Smoothies usually contain crushed fruit, purees and fruit juice to produce a
+              premium fruit juice product.</td>
+          </tr>
+        </table>
+      </div>
 
 
 
       <!-- dessert-->
-			<div id="Dessert" class="food_container">
-				<table cellspacing="20px" width="100%" align="center">
-					<tr>
-						<td class="food_name"><h3>Dessert</h3></td>
-						<td class="food_photo" rowspan="2">
-							<img src="dessert.jpeg" width="300px" alt="Dessert">
-						</td>
-					</tr>
-					<tr>
-						<td class="food_description">These delicious fruit and nut dark chocolate bites are a healthier way to enjoy a chocolatey dessert!
-              This recipe is a very easy and healthy way to enjoy dessert.his recipe is caramel + PB + chocolate deliciousness.
-              </td>
-					</tr>
-				</table>
-			</div>
+      <div id="Dessert" class="food_container">
+        <table cellspacing="20px" width="100%" align="center">
+          <tr>
+            <td class="food_name">
+              <h3>Dessert</h3>
+            </td>
+            <td class="food_photo" rowspan="2">
+              <img src="dessert.jpeg" width="300px" alt="Dessert">
+            </td>
+          </tr>
+          <tr>
+            <td class="food_description">These delicious fruit and nut dark chocolate bites are a healthier way to enjoy
+              a chocolatey dessert!
+              This recipe is a very easy and healthy way to enjoy dessert.his recipe is caramel + PB + chocolate
+              deliciousness.
+            </td>
+          </tr>
+        </table>
+      </div>
 
-		</div></div>
+    </div>
+  </div>
 
 </body>
 
